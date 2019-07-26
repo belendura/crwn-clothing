@@ -26,6 +26,6 @@ export const removeItemFromCart = (cartItems, cartItemToRemove)=>{
         : cartItem)
     } 
     else{
-     return cartItems.filter(cartItem => cartItem.id != cartItemToRemove.id)
+     return cartItems.filter(cartItem => cartItem.id !== cartItemToRemove.id)
     } 
 }
