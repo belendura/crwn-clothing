@@ -6,13 +6,13 @@ import {auth, createUserProfileDocument} from "../../firebase/firebase.utils";
 
 class SignUp extends Component{
 
-constructor(){
-    super()
+constructor(props){
+    super(props)
     this.state={
-        displayName:" ",
-        email:" ",
-        password:" ",
-        confirmPassword:" ",
+        displayName:"",
+        email:"",
+        password:"",
+        confirmPassword:"",
     }
 }
 handleSubmit =async event=>{
@@ -29,10 +29,10 @@ handleSubmit =async event=>{
         await createUserProfileDocument(user, {displayName});
 
         this.setState({
-            displayName:" ",
-            email:" ",
-            password:" ",
-            confirmPassword:" "
+            displayName:"",
+            email:"",
+            password:"",
+            confirmPassword:""
         });
     }catch(error){
         console.log(error)
@@ -40,7 +40,7 @@ handleSubmit =async event=>{
     
 }
    
-handleChange =event=>{
+handleChange = event=>{
    const {value, name}=event.target;
    
    this.setState({[name]:value});
